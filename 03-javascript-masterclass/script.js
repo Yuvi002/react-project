@@ -143,6 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
+/*
 //Destructuring
 const book = getBook(1);
 
@@ -178,3 +179,45 @@ const summary = `${title}, a ${pages}-page long book, was written by ${author} a
   publicationDate.split("-")[0]
 }`;
 summary;
+
+//Ternary Operator
+const pagesRange = pages > 100 ? "over a thousand" : "less than a thousand";
+pagesRange;
+console.log(`The book has ${pagesRange} pages.`);
+
+//Arrow Function
+function getYear(str) {
+  return str.split("-")[0];
+}
+
+const getYear = (str) => str.split("-")[0];
+
+console.log(getYear(publicationDate)); // "1954"
+
+//Short-Circuiting: Means that in logical operations, if the first operand determines the result, the second operand is not evaluated.
+console.log(true && "Some string");
+console.log(false && "Some string");
+
+//OPTIONAL CHAINING
+function getTotalReview(book) {
+  const goodread = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
+
+console.log(getTotalReviewCount(book));
+*/
+
+//Array Map Method
+const books = getBooks();
+
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(x);
+
+const titles = books.map((book) => book.title);
+titles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+}));
+essentialData;

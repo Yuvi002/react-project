@@ -207,6 +207,7 @@ function getTotalReview(book) {
 console.log(getTotalReviewCount(book));
 */
 
+/*
 //Array Map Method
 const books = getBooks();
 
@@ -221,3 +222,68 @@ const essentialData = books.map((book) => ({
   author: book.author,
 }));
 essentialData;
+
+//Array Filter Method - 10/11/2025
+const longBooksWithMovie = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooksWithMovie;
+
+const adventureBooks = books
+  .filter((books) => books.genres.includes("adventure"))
+  .map((book) => book.title);
+adventureBooks;
+
+//Array Reduce Method - Use for reducing rthe entire array to a single value
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+pagesAllBooks;
+
+//Array Sort Method
+const arr = [2, 7, 1, 9, 6];
+const sorted = arr.slice().sort((a, b) => a - b);
+sorted;
+arr;
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
+
+//Immutable Arrays
+// 1) Add book oject to array
+
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the chamber of secrets",
+  author: "J. K. Rowling",
+};
+
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd;
+
+// 2) Remove book object from array
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+booksAfterDelete;
+
+// 3) Update book object in array
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 1210 } : book
+);
+booksAfterDelete;
+*/
+
+//Asynchronous JavaScript - Callbacks, Promises, Async/Await
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
+
+// console.log("jonas");
+
+//Async/Await
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log(data);
+}
+
+getTodos();
+
+console.log("jonas");
